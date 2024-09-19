@@ -1,66 +1,32 @@
 export const routes = [
   {
     path: '/',
-    redirect: '/home',
+    redirect: '/chapter1',
     component: () => import('@/layout/basic/index.vue'),
     children: [
       {
-        path: 'home',
-        component: () => import('@/views/home/index.vue'),
+        path: 'chapter1',
+        component: () => import('@/views/chapter1/index.vue'),
         meta: {
-          title: 'tabbar.home',
+          title: 'chapter1',
           keepAlive: true,
         },
       },
       {
-        path: 'list',
-        component: () => import('@/views/list/index.vue'),
+        path: 'chapter2',
+        component: () => import('@/views/chapter2/index.vue'),
         meta: {
-          title: 'tabbar.list',
+          title: 'chapter2',
           keepAlive: true,
-        },
-      },
-      {
-        path: 'member',
-        component: () => import('@/views/member/index.vue'),
-        meta: {
-          title: 'tabbar.member',
-          keepAlive: true,
-        },
-      },
-      {
-        path: 'demo',
-        component: () => import('@/views/demo/index.vue'),
-        meta: {
-          title: 'tabbar.demo',
-          keepAlive: true,
-        },
-      },
-      {
-        name: 'listDetails',
-        path: '/details',
-        component: () => import('@/views/list/details/index.vue'),
-        meta: {
-          title: 'list.details',
-          border: false,
         },
       },
     ],
-  },
-  {
-    name: 'login',
-    path: '/login',
-    component: () => import('@/views/login/index.vue'),
-    meta: {
-      title: '',
-      keepAlive: true,
-    },
   },
   // 匹配不到重定向会主页
   {
     // 找不到路由重定向到404页面
     path: '/:pathMatch(.*)',
-    redirect: '/Home',
+    redirect: '/chapter1',
   },
 ];
 
